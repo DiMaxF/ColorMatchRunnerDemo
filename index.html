@@ -44,7 +44,7 @@
 
 <body>
 	<div id="gameContainer">
-		<canvas id="unity-canvas" width="1125" height="2436" data-pixel-art=""></canvas>
+		<canvas id="unity-canvas" width="1080" height="1920" data-pixel-art=""></canvas>
 		<script src="Build/ColorMatchBuild.loader.js"></script>
 		<script>
 			var canvas = document.querySelector("#unity-canvas");
@@ -78,15 +78,15 @@
 					w = window.innerWidth;
 					h = window.innerHeight;
 
-					var r = 2436 / 1125;
+					var r = 1920 / 1080;
 
 					if (w * r > window.innerHeight) {
 						w = Math.min(w, Math.ceil(h / r));
 					}
 					h = Math.floor(w * r);
 				} else {
-					w = 1125;
-					h = 2436;
+					w = 1080;
+					h = 1920;
 				}
 
 				container.style.width = canvas.style.width = w + "px";
