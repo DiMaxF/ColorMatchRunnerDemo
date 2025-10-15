@@ -1,0 +1,115 @@
+{
+    "platforms": {
+        "game_distribution": {
+            "gameId": ""
+        },
+        "telegram": {
+            "adsgramBlockId": ""
+        },
+        "y8": {
+            "gameId": "",
+            "adsenseId": "",
+            "channelId": ""
+        },
+        "lagged": {
+            "devId": "",
+            "publisherId": ""
+        },
+        "huawei": {
+            "appId": ""
+        },
+        "msn": {
+            "gameId": ""
+        },
+        "discord": {
+            "appId": ""
+        },
+        "gamepush": {
+            "projectId": "",
+            "publicToken": ""
+        },
+        "jio_games": {
+            "packageName": ""
+        },
+        "crazy_games": {
+            "xsollaProjectId": "",
+            "isSandbox": false,
+            "useUserToken": false
+        },
+        "facebook": {
+            "subscribeForNotificationsOnStart": true,
+            "sendAnalyticsEvents": false
+        },
+        "yandex": {
+            "useSignedData": false,
+            "sendAnalyticsEvents": false
+        },
+        "youtube": {
+            "sendAnalyticsEvents": false
+        }
+    },
+    "advertisement": {
+        "interstitial": {
+            "preloadOnStart": true,
+            "placements": [
+                {
+                    "id": "interstitial_placement"
+                }
+            ]
+        },
+        "rewarded": {
+            "preloadOnStart": true,
+            "placementFallback": "test_rewarded_placement",
+            "placements": [
+                {
+                    "id": "test_rewarded_placement"
+                },
+                {
+                    "id": "revive_placement"
+                }
+            ]
+        },
+        "banner": {
+            "placementFallback": "test_banner_placement",
+            "placements": [
+                {
+                    "id": "test_banner_placement"
+                }
+            ]
+        },
+        "useBuiltInErrorPopup": true,
+        "backfillId": ""
+    },
+    "payments": [
+        {
+            "id": "remove_ads",
+            "title": "No Ads",
+            "description": "Remove all advertisements from the game",
+            "price": "5.99",
+            "priceCurrencyCode": "USD"
+        },
+        {
+            "id": "coins_small",
+            "title": "500",
+            "description": "Get 500 coins",
+            "price": "2.49",
+            "priceCurrencyCode": "USD"
+        },
+        {
+            "id": "coins_middle",
+            "title": "1500",
+            "description": "Get 1500 coins",
+            "price": "3.99",
+            "priceCurrencyCode": "USD"
+        },
+        {
+            "id": "coins_large",
+            "title": "3000",
+            "description": "Get 3000 coins",
+            "price": "5.99",
+            "priceCurrencyCode": "USD"
+        }
+    ],
+    "leaderboards": [],
+    "sendAnalyticsEvents": true
+}
