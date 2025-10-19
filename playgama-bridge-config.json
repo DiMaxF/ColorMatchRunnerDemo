@@ -1,4 +1,5 @@
 {
+    "$schema": "https://bridge.playgama.com/v1.26.0/schema.json",
     "platforms": {
         "game_distribution": {
             "gameId": ""
@@ -28,9 +29,6 @@
             "projectId": "",
             "publicToken": ""
         },
-        "jio_games": {
-            "packageName": ""
-        },
         "crazy_games": {
             "xsollaProjectId": "",
             "isSandbox": false,
@@ -50,66 +48,15 @@
     },
     "advertisement": {
         "interstitial": {
-            "preloadOnStart": true,
-            "placements": [
-                {
-                    "id": "interstitial_placement"
-                }
-            ]
+            "preloadOnStart": true
         },
         "rewarded": {
-            "preloadOnStart": true,
-            "placementFallback": "test_rewarded_placement",
-            "placements": [
-                {
-                    "id": "test_rewarded_placement"
-                },
-                {
-                    "id": "revive_placement"
-                }
-            ]
-        },
-        "banner": {
-            "placementFallback": "test_banner_placement",
-            "placements": [
-                {
-                    "id": "test_banner_placement"
-                }
-            ]
+            "preloadOnStart": true
         },
         "useBuiltInErrorPopup": true,
         "backfillId": ""
     },
-    "payments": [
-        {
-            "id": "remove_ads",
-            "title": "No Ads",
-            "description": "Remove all advertisements from the game",
-            "price": "5.99",
-            "priceCurrencyCode": "USD"
-        },
-        {
-            "id": "coins_small",
-            "title": "500",
-            "description": "Get 500 coins",
-            "price": "2.49",
-            "priceCurrencyCode": "USD"
-        },
-        {
-            "id": "coins_middle",
-            "title": "1500",
-            "description": "Get 1500 coins",
-            "price": "3.99",
-            "priceCurrencyCode": "USD"
-        },
-        {
-            "id": "coins_large",
-            "title": "3000",
-            "description": "Get 3000 coins",
-            "price": "5.99",
-            "priceCurrencyCode": "USD"
-        }
-    ],
+    "payments": [],
     "leaderboards": [],
     "sendAnalyticsEvents": true
 }
