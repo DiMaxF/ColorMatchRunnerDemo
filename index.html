@@ -10,16 +10,34 @@
                 height: 100%;
                 padding: 0px;
                 margin: 0px;
+                overflow: hidden;
+                background-color: #000000; /* Фон по краям: чёрный (можно заменить на #242424 или background-image: url('bg.jpg'); background-size: cover;) */
+                display: flex;
+                justify-content: center; 
+                align-items: center; 
+                min-height: 100vh;
+                min-width: 100vw;
             }
             .fullscreen-canvas {
-                background: #242424;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0px;
-                left: 0px;
+                width: 1080px !important;
+                height: 1920px !important;
+                background: transparent; 
+                position: relative;
+                border: 0;
+                max-width: 100vw;
+                max-height: 100vh;
             }
            
+            @media (max-width: 1080px) or (max-height: 1920px) {
+                body {
+                    background-color: #242424;
+                }
+                .fullscreen-canvas {
+                    width: 100vw !important;
+                    height: 100vh !important;
+                    background: #242424; 
+                }
+            }
         </style>
     </head>
     <body>
@@ -83,8 +101,8 @@
                                 companyName: 'DefaultCompany',
                                 productName: 'ColorMatch',
                                 productVersion: '0.1.0',
-                                // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-                                // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+                                matchWebGLToCanvasSize: false, // Включаем: отдельно контролируем размер рендера и DOM
+                                devicePixelRatio: 1, // Опционально: фиксируем DPI для стабильности
                             },
                             onUnityLoadingProgressChanged)
                             .then((unityInstance) => {
