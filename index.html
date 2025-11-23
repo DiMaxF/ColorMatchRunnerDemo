@@ -66,6 +66,7 @@
 
             function initializeBridge() {
                 bridge.engine = 'unity'
+                bridge.forciblySetPlatformId = 'mock';
                 bridge
                     .initialize()
                     .then(() => {
