@@ -66,6 +66,7 @@
 
             function initializeBridge() {
                 bridge.engine = 'unity'
+                // Для тестирования используем mock платформу (можно убрать в проде)
                 bridge.forciblySetPlatformId = 'mock';
                 bridge
                     .initialize()
