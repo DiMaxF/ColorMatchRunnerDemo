@@ -66,8 +66,6 @@
 
             function initializeBridge() {
                 bridge.engine = 'unity'
-                // Для тестирования используем mock платформу (можно убрать в проде)
-                bridge.forciblySetPlatformId = 'mock';
                 bridge
                     .initialize()
                     .then(() => {
@@ -565,23 +563,27 @@
             }
 
             window.paymentsPurchase = function(id, options) {
+                console.log('[Bridge] Starting purchase for product:', id);
                 if (options) {
                     options = JSON.parse(options)
                 }
                 
                 bridge.payments.purchase(id, options)
                     .then(data => {
+                        console.log('[Bridge] Purchase completed, data:', data);
                         if (data) {
                             if (typeof data !== 'string') {
                                 data = JSON.stringify(data)
                             }
-
+                            console.log('[Bridge] Sending purchase success to Unity:', data);
                             sendMessageToUnity('OnPaymentsPurchaseCompleted', data)
                         } else {
-                            sendMessageToUnity('OnPaymentsPurchaseCompleted', '')
+                            console.log('[Bridge] Purchase successful but no data, sending empty string');
+                            sendMessageToUnity('OnPaymentsPurchaseCompleted', '{}')
                         }
                     })
                     .catch(error => {
+                        console.error('[Bridge] Purchase failed:', error);
                         sendMessageToUnity('OnPaymentsPurchaseFailed', '')
                     })
             }
@@ -605,19 +607,23 @@
             }
 
             window.paymentsGetCatalog = function() {
+                console.log('[Bridge] Requesting payments catalog...');
                 bridge.payments.getCatalog()
                     .then(data => {
+                        console.log('[Bridge] Catalog received:', data);
                         if (data) {
                             if (typeof data !== 'string') {
                                 data = JSON.stringify(data)
                             }
-
+                            console.log('[Bridge] Sending catalog to Unity:', data);
                             sendMessageToUnity('OnPaymentsGetCatalogCompletedSuccess', data)
                         } else {
+                            console.warn('[Bridge] Catalog is empty');
                             sendMessageToUnity('OnPaymentsGetCatalogCompletedSuccess', '')
                         }
                     })
                     .catch(error => {
+                        console.error('[Bridge] Catalog error:', error);
                         sendMessageToUnity('OnPaymentsGetCatalogCompletedFailed', '')
                     })
             }
